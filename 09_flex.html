@@ -8,7 +8,7 @@
       .container {
         /* overflow: hidden; */
         /* flex container */
-        display: flex;
+        display: flex; /* 하위(자식) 요소들을 flex item으로 만드는 설정 */
         /* flex-direction: row; 기본이 row */
         gap: 10px; /* (flex item)아이템 사이 간격 */
       }
@@ -38,6 +38,9 @@
         /* justify-content: start; */
         /* justify-content: center; */
         /* justify-content: end; */
+        /* [] 1 [] 2 [] 3 [] 
+        각각 flex item들의 width를 빼고, 남은 여백을 왼쪽부터 나머지 []들이 나눠가짐 */
+        /* 똑같이 */
         /* justify-content: space-evenly; */
         /* 맨왼쪽, 오른쪽은 반만 */
         /* justify-content: space-around; */
