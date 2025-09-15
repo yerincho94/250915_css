@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>color & 사이즈</title>
+    <style>
+      .my-section {
+        /* color */
+        color: aquamarine;
+        background-color: brown; /* 해당 영역이 차지하고 있는 배경을 채워주는 색 */
+        /* border : 두께 색상 타입 */
+        border: 2px blue solid; /* 외곽선 색 */
+      }
+      .my-section2 {
+        /* RGB hexa code : 16진법 */
+        color: #856404;
+        background-color: #fff3cd;
+        border: 5px #ffc107 solid;
+        /* ai한테 적절한 색추천 -> hex code으로 추천해줘라고 해야함! */
+      }
+      /* 단위 : px, em, rem, %, vw/vh */
+      p {
+        font-size: 12px;
+      }
+      div {
+        font-size: 4px;
+      }
+      section {
+        /* font-size: 1em; */
+        font-size: 2em;
+        /* 직전에 물려받은 크기의 배수로 처리하겠다는 뜻. */
+      }
+      html {
+        font-size: 32px;
+      }
+      :root {
+        font-size: 8;
+      }
+      .rem {
+        /* html에 적용된 크기에 비례해서 고정적으로 표현 */
+        font-size: 2rem;
+      }
+      .box {
+        width: 240px;
+        height: 240px;
+        background-color: red;
+      }
+      .box2 {
+        width: 50%;
+        height: 50%;
+        background-color: blue;
+      }
+      .box3 {
+        width: 70vw;
+        height: 70vh;
+        background-color: green;
+        /* 브라우저의 가로폭(100vw), 브라우저의 세로폭(100vh) 배분한다, 비례한다! */
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <section class="box">
+        <section class="box2"></section>
+      </section>
+      <section class="box3"></section>
+      <section>
+        em 테스트! : 24px - 2em => 48px
+        <section>
+          em 테스트2! : 48px - 2em => 96px
+          <section>em 테스트3! : 96px - 2em => 192px</section>
+        </section>
+      </section>
+      <section class="rem">
+        rem 테스트!
+        <section>
+          rem 테스트2!
+          <section>rem 테스트3!</section>
+        </section>
+      </section>
+    </div>
+
+    <p>안녕하세용~~</p>
+    <!-- 2가지 : 색상이 적용되는 경우(3가지) / 색상을 적용하는 방법(2가지) -->
+    <!-- 
+        1 : 텍스트(폰트) 색 
+        2 : 배경 색
+        3 : 외곽선 색
+    -->
+    <section class="my-section">
+      <!-- lorem : 의미 없는 긴 문장 -->
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Error dolores,
+      aspernatur itaque fuga ipsam, doloribus tenetur iusto quisquam facilis
+      officiis delectus adipisci? Autem minima provident ipsam praesentium?
+      Facilis, quis recusandae!
+    </section>
+    <section class="my-section2">
+      <!-- section.my-section2 하면 class포함한 태그 생성해줌 -->
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni sequi,
+      dolorum quia, dignissimos eum vitae iusto delectus nihil, nobis
+      voluptatibus voluptatum! Assumenda fugiat doloribus cupiditate accusantium
+      debitis? Quisquam, quo optio.
+    </section>
+  </body>
+</html>
