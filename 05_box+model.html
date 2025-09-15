@@ -38,14 +38,53 @@
         margin: 20px auto;
         /* 가로 가운데 정렬을 할 때 */
         /* 크기 포함되지 않음 */
+
+        /* 기본 설정 */
+        box-sizing: content-box;
+      }
+      #box2 {
+        box-sizing: border-box;
+        background-color: bisque;
+        width: 240px;
+        height: 240px;
+        padding: 20px;
+        border: 1px black solid;
+        /* margin: 20px auto; */
+        margin: auto;
+      }
+      .wrapper {
+        padding: 20px;
+      }
+      .box {
+        width: 120px;
+        aspect-ratio: 1;
+        background-color: red;
+        margin: 10px;
       }
     </style>
   </head>
   <body>
     <!-- 개발자 도구 : Fn+F12 -->
-    <div id="box1">
-      (div 같은 블록 display는) 내부의 컨텐츠 길이에 따라서 세로가 결정되며,
-      기본적으로는 가로 100%를 모두 점유함.
+    <div>
+      <div id="box1">
+        (div 같은 블록 display는) 내부의 컨텐츠 길이에 따라서 세로가 결정되며,
+        기본적으로는 가로 100%를 모두 점유함.
+      </div>
     </div>
+
+    <!-- 마진끼리 붙으면 -> 마진은 서로 '충돌'이 일어나지 않음. 마진의 원리는 content와 충돌. -->
+    <!-- 📌 해결 방법 1: wrapper(container) + padding -->
+    <div class="wrapper">
+      <div id="box2">content-box vs border-box</div>
+    </div>
+
+    <!-- 해결 방법 2: 안보이는 요소를 중간에 넣기(비권장) -->
+    <div class="box"></div>
+    <div style="border: 1px transparent solid"></div>
+    <div class="box"></div>
+
+    <!-- 해결 방법 3: flex -> gap(요소간의 거리)으로 처리 margin 대신 -->
+    <div class="box" style="margin-bottom: 48px"></div>
+    <div class="box" style="margin-top: 16px"></div>
   </body>
 </html>
