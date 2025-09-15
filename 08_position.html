@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Position</title>
+    <style>
+      .container {
+        position: static;
+        width: 240px;
+        height: 240px;
+        background-color: bisque;
+        border: 1px brown solid;
+        padding: 20px;
+      }
+      .box {
+        /* 일반 block이나 inline 그대로 작동한다는 뜻 */
+        position: static;
+        width: 120px;
+        height: 120px;
+        background-color: yellowgreen;
+        border: 1px brown solid;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Sticky -->
+    <div class="container">
+      <div class="box" style="position: sticky; top: 0">
+        sticky는 상단에 붙는다.
+      </div>
+    </div>
+
+    <!-- Static -->
+    <div class="container">
+      <div class="box" style="position: static; left: 20px; top: 20px">
+        static -> top, left, right, bottom -> 해당 위치로부터 x사이즈 만큼 이동
+        -> static은 이를 무시함
+      </div>
+    </div>
+
+    <!-- Relative -->
+    <div class="container">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus
+      architecto est hic neque. Quo enim quod pariatur consequatur, atque itaque
+      modi incidunt esse architecto dolores cumque et voluptatum omnis autem.
+      <div
+        class="box"
+        style="margin: auto; position: relative; left: 20px; top: 20px"
+      >
+        relative -> 현재 주어진 위치 (padding, margin 등을 다 반영한 상태에서)
+      </div>
+    </div>
+
+    <!-- Absolute: Relative 영역 안에서 작동 -->
+    <div class="container">
+      <div style="position: relative">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur
+        autem, repellendus dolor rerum animi necessitatibus impedit, itaque
+        alias corporis ullam, molestias quisquam? Voluptate ullam assumenda, ex
+        ipsa impedit vitae cupiditate?
+        <div class="box" style="position: absolute; left: 20px; top: 20px">
+          relative -> 가장 가까운 static이 아닌 상위 요소 기준으로 배치됨.
+          만약에 없다면 html(root) 경로 -> 흐름에서 제거되며 float 처럼 작동함.
+        </div>
+        <div class="box" style="position: absolute; right: 20px; bottom: 20px">
+          [ABSOLUTE]
+        </div>
+      </div>
+    </div>
+
+    <!-- Fixed: 전 화면-->
+    <div class="container">
+      <div class="box" style="position: fixed; right: 20px; bottom: 20px">
+        fixed는 그냥 화면.
+      </div>
+    </div>
+  </body>
+</html>
