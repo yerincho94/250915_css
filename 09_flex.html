@@ -4,7 +4,109 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Flex</title>
-    <style></style>
+    <style>
+      .container {
+        /* overflow: hidden; */
+        /* flex container */
+        display: flex;
+        /* flex-direction: row; 기본이 row */
+        gap: 10px; /* (flex item)아이템 사이 간격 */
+      }
+      .box {
+        /* flex item */
+        /* float: left; */
+        /* display: block; 
+         display: inline; 
+         display: inline-block; */
+        width: 80px;
+        /* height: 80px; */
+        background-color: steelblue;
+        border: 1px solid black;
+      }
+      /* 넘칠 시 줄 바꿈 */
+      .wrap {
+        flex-wrap: wrap; /* 줄바꿈 필요 시 */
+      }
+      /* 메인 축 방향 */
+      .column {
+        flex-direction: column;
+        /* row-reverse, column-reverse */
+      }
+      /* 주축 Main axis */
+      .justify-content {
+        /* 주축은 여백이 계속 존재하도록 배치한다. */
+        /* justify-content: start; */
+        /* justify-content: center; */
+        /* justify-content: end; */
+        /* justify-content: space-evenly; */
+        /* 맨왼쪽, 오른쪽은 반만 */
+        /* justify-content: space-around; */
+        justify-content: space-between;
+      }
+      /* 교차축 Cross axis */
+      /* 여백이 새로 만들어지지 않음, 다만 -> 늘어날 것이냐? */
+      .align-items {
+        align-items: stretch; /* 기본 */
+        /* align-items: start; */
+        /* align-items: center; */
+        /* align-items: end; */
+        /* 요소에 height가 있으면 해당 height가 먼저임! */
+        height: 120px;
+      }
+    </style>
   </head>
-  <body></body>
+  <body>
+    <hr />
+    <div class="container">
+      <div class="box">1</div>
+      <div class="box">2</div>
+      <div class="box">3</div>
+    </div>
+    <hr />
+    <div class="container wrap">
+      <div class="box">1</div>
+      <div class="box">2</div>
+      <div class="box">3</div>
+      <div class="box">4</div>
+      <div class="box">5</div>
+      <div class="box">6</div>
+    </div>
+    <hr />
+    <!-- flex-direction -->
+    <!-- row : 행 배치(왼쪽 -> 오른쪽) -->
+    <!-- column : 열 배치 (위 -> 아래로) -->
+    <div class="container column">
+      <div class="box">1</div>
+      <div class="box">2</div>
+      <div class="box">3</div>
+    </div>
+    <hr />
+    <div class="container justify-content">
+      <div class="box">1</div>
+      <div class="box">2</div>
+      <div class="box">3</div>
+    </div>
+    <hr />
+    <div class="container align-items">
+      <div class="box">1</div>
+      <div class="box">2</div>
+      <div class="box">3</div>
+    </div>
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit repudiandae
+    amet similique dolore alias porro vel molestiae velit, autem nostrum maiores
+    cupiditate hic dicta illum dolorem magnam harum fugiat eum?
+    <div
+      style="
+        background-color: cadetblue;
+        width: 256px;
+        aspect-ratio: 1;
+        /* 아래 구문 때문에 flex 꼭 하는 것!! */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      "
+    >
+      <img width="64" src="penguin.png" alt="" />
+    </div>
+  </body>
 </html>
