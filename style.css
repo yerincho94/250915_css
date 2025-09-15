@@ -1,0 +1,8 @@
+/* css 문법으로 */
+h1 {
+  color: steelblue;
+}
+/* 내부, 외부간 우선도 체크 */
+p {
+  color: chocolate;
+}
